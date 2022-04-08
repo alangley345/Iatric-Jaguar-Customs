@@ -1,5 +1,5 @@
 //Uses Jaguar's boiler plate to try below code and return a empty string is their is an exception.
-public string (string arg1){
+public string CalculateAge(string arg1){
     try{       
         int age             = 0; 
         string format   = "yyyyMMdd";
