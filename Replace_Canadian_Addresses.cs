@@ -2,7 +2,7 @@
 public string replace_canadian_addresses(string arg1)
 {
     try{
-        string address  = "214^KING STREET^OGDENSBURG^NY^13669";
+        string address  = "214 KING STREET^^OGDENSBURG^NY^13669";
         string[] pid_11_0 = arg1.Split('^');
         StringBuilder temp = new StringBuilder();
         temp.Append(pid_11_0[pid_11_0.Length - 1]);
