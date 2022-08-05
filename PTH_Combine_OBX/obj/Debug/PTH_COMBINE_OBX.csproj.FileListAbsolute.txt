@@ -1,0 +1,8 @@
+G:\My Drive\C#\PTH_Combine_OBX\bin\Debug\PTH_COMBINE_OBX.dll
+G:\My Drive\C#\PTH_Combine_OBX\bin\Debug\PTH_COMBINE_OBX.pdb
+G:\My Drive\C#\PTH_Combine_OBX\bin\Debug\Iatric.EasyConnect.AddIns.Views.dll
+G:\My Drive\C#\PTH_Combine_OBX\obj\Debug\PTH_COMBINE_OBX.csproj.CoreCompileInputs.cache
+G:\My Drive\C#\PTH_Combine_OBX\obj\Debug\PTH_COMBINE_OBX.csproj.CopyComplete
+G:\My Drive\C#\PTH_Combine_OBX\obj\Debug\PTH_COMBINE_OBX.dll
+G:\My Drive\C#\PTH_Combine_OBX\obj\Debug\PTH_COMBINE_OBX.pdb
+G:\My Drive\C#\PTH_Combine_OBX\obj\Debug\PTH_COMBINE_OBX.csproj.AssemblyReference.cache
