@@ -1,4 +1,4 @@
-﻿using Iatric.EasyConnect.AddIns.Views;
+using Iatric.EasyConnect.AddIns.Views;
 using Microsoft.VisualBasic.CompilerServices;
 using System;
 using System.Collections.Generic;
@@ -40,26 +40,33 @@ namespace CHMC.PTH
 
                 List<string> segments = hl7msg.GetAllSegments();
                 string OBX15 = "";
-                string OBX1 = "";
+                string OBX1  = "";
+                int OBXStart = 0;
 
-                foreach (string s in segments)
+                for (int i =0;  i<segments.Count; i++)
                 {
-                    if (s.Contains("OBX|1|"))
+                    if (segments[i].Contains("OBX|1|"))
                     {
-                        OBX1 += s;
+                        OBX1 += segments[i];
+                        OBXStart += i;
+                        
                     }
-                    if (s.Contains("OBX"))
+                    if (segments[i].Contains("OBX"))
                     {
-                        string[] OBX = s.Split('|');
-                        OBX15 += OBX[5] + '~'; 
+                        string[] OBX = segments[i].Split('|');
+                        OBX15 += OBX[5] + '~';
+                        
                     }
                 }
-                string[] temp = OBX1.Split('|');
-                temp[5] = OBX15;
 
-                string j = string.Join("|", temp);
-               
-                data = Encoding.UTF8.GetBytes(j);
+                segments.RemoveRange(OBXStart, segments.Count - OBXStart);
+                string[] tempOBX = OBX1.Split('|');
+                tempOBX[5] = OBX15;
+                string j = string.Join("|", tempOBX);
+                segments.Add(j);
+                string finalMSG = string.Join("\r", segments.ToArray());
+
+                data = Encoding.UTF8.GetBytes(finalMSG);
                 File.WriteAllBytes(tempFilePath, data);
                 dataStatus = DataStatus.Success;
             }
